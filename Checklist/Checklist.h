@@ -11,5 +11,6 @@
 @interface Checklist : NSObject
 
 @property(nonatomic,copy) NSString *name;
+@property(nonatomic,strong)NSMutableArray *items;
 
 @end
