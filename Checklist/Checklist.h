@@ -1,16 +1,16 @@
 //
 //  Checklist.h
-//  Checklist
+//  Checklists
 //
-//  Created by 洪磊 on 15/5/4.
-//  Copyright (c) 2015年 honglei. All rights reserved.
+//  Created by Matthijs on 02-10-13.
+//  Copyright (c) 2013 Razeware LLC. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface Checklist : NSObject
+@interface Checklist : NSObject<NSCoding>
 
-@property(nonatomic,copy) NSString *name;
-@property(nonatomic,strong)NSMutableArray *items;
+@property (nonatomic, copy) NSString *name;
+@property(nonatomic,strong) NSMutableArray *items;
 
 @end

@@ -22,7 +22,7 @@
 {
     if((self = [super init])){
         self.name = [aDecoder decodeObjectForKey:@"Name"];
-        self.name = [aDecoder decodeObjectForKey:@"Items"];
+        self.items = [aDecoder decodeObjectForKey:@"Items"];
     }
     return self;
 }
@@ -32,7 +32,5 @@
     [aCoder encodeObject:self.name forKey:@"Name"];
     [aCoder encodeObject:self.items forKey:@"Items"];
 }
-
-
-
 @end
+

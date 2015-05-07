@@ -24,9 +24,8 @@
 {
     if ((self =[super init])) {
         self.text = [aDecoder decodeObjectForKey:@"Text"];
-        self.checked = [aDecoder decodeObjectForKey:@"Check"];
+        self.checked = [aDecoder decodeObjectForKey:@"Checked"];
     }
     return self;
 }
 
-@end
