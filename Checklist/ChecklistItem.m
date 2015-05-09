@@ -14,6 +14,7 @@
 {
     self.checked = !self.checked;
 }
+
 -(void)encodeWithCoder:(NSCoder *)aCoder
 {
     [aCoder encodeObject:self.text forKey:@"Text"];
@@ -24,7 +25,7 @@
 {
     if ((self =[super init])) {
         self.text = [aDecoder decodeObjectForKey:@"Text"];
-        self.checked = [aDecoder decodeObjectForKey:@"Checked"];
+        self.checked = [aDecoder decodeBoolForKey:@"Checked"];
     }
     return self;
 }
