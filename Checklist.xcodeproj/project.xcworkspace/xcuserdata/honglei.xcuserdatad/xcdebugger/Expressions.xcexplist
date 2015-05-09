@@ -7,6 +7,27 @@
       </ContextState>
       <ContextState
          contextName = "-[AllListsViewController loadChecklists]:AllListsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.checked">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ChecklistItem initWithCoder:]:ChecklistItem.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.checked">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[AllListsViewController saveChecklists]:AllListsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.checked">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
    </ContextStates>
 </VariablesViewState>

@@ -29,6 +29,7 @@
     NSString *documentsDirectory = [paths firstObject];
     
     return documentsDirectory;
+    NSLog(@"file path is %@",documentsDirectory);
 }
 
 -(NSString*)dataFilePath{
@@ -65,6 +66,7 @@
         
         _lists = [[NSMutableArray alloc]initWithCapacity:20];
     }
+    NSLog(@"file path is %@",path);
     
 }
 
@@ -75,33 +77,6 @@
 {
   if ((self = [super initWithCoder:aDecoder]))
   {
-//    _lists = [[NSMutableArray alloc] initWithCapacity:20];
-//
-//    Checklist *list;
-//
-//    list = [[Checklist alloc] init];
-//    list.name = @"Birthdays";
-//    [_lists addObject:list];
-//
-//    list = [[Checklist alloc] init];
-//    list.name = @"Groceries";
-//    [_lists addObject:list];
-//
-//    list = [[Checklist alloc] init];
-//    list.name = @"Cool Apps";
-//    [_lists addObject:list];
-//
-//    list = [[Checklist alloc] init];
-//    list.name = @"To Do";
-//    [_lists addObject:list];
-//      
-//      
-//      for(Checklist *list in _lists){
-//          ChecklistItem *item = [[ChecklistItem alloc]init];
-//          item.text = [NSString stringWithFormat:@"Item for %@",list.name];
-//          [list.items addObject:item];
-//      }
-      
       [self loadChecklists];
   }
   return self;
@@ -110,18 +85,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
