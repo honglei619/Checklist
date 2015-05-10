@@ -10,6 +10,13 @@
 
 @implementation DataModel
 
+-(void)registerDefault{
+    
+    NSDictionary *dictionary =@{@"ChecklistIndex":@-1};
+    [[NSUserDefaults standardUserDefaults]registerDefaults:dictionary                   ];
+    
+}
+
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     if ((self = [super init]))
@@ -21,6 +28,7 @@
 -(id)init{
     if ((self = [super init])) {
         [self loadChecklists];
+        [self registerDefault];
     }
     return self;
 }
@@ -110,7 +118,14 @@
     
 }
 
+-(NSInteger)indexOfSelectedChecklist{
+    return [[NSUserDefaults standardUserDefaults]integerForKey:@"ChecklistIndex"];
+    
+}
 
+-(void)setIndexOfSelectChecklist:(NSInteger)index{
+    [[NSUserDefaults standardUserDefaults]setInteger:index forKey:@"ChecklistIndex"];
+}
 
 
 
