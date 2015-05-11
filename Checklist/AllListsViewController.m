@@ -20,68 +20,6 @@
 
 
 
-#pragma mark 获取沙盒地址
-/*
--(NSString*)documentsDirectory{
-    
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths firstObject];
-    
-    return documentsDirectory;
-    NSLog(@"file path is %@",documentsDirectory);
-}
-
--(NSString*)dataFilePath{
-    
-    return [[self documentsDirectory]stringByAppendingPathComponent:@"Checklists.plist"];
-}
-
--(void)saveChecklists{
-    
-    NSMutableData *data = [[NSMutableData alloc]init];
-    NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc]initForWritingWithMutableData:data];
-    
-    [archiver encodeObject:_lists forKey:@"Checklists"];
-    [archiver finishEncoding];
-    
-    [data writeToFile:[self dataFilePath] atomically:YES];
-    
-
-}
-
--(void)loadChecklists{
-    
-    NSString *path = [self dataFilePath];
-    
-    if([[NSFileManager defaultManager]fileExistsAtPath:path]){
-        
-        NSData *data = [[NSData alloc]initWithContentsOfFile:path];
-        NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc]initForReadingWithData:data];
-        
-        _lists = [unarchiver decodeObjectForKey:@"Checklists"];
-        
-        [unarchiver finishDecoding];
-    }else{
-        
-        _lists = [[NSMutableArray alloc]initWithCapacity:20];
-    }
-    NSLog(@"file path is %@",path);
-    
-}
-
-#pragma mark init
-
-
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
-  if ((self = [super initWithCoder:aDecoder]))
-  {
-      [self loadChecklists];
-  }
-  return self;
-}
-
-*/
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -108,12 +46,23 @@
 
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
   if (cell == nil) {
-    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
   }
 
   Checklist *checklist = self.dataModel.lists[indexPath.row];
   cell.textLabel.text = checklist.name;
   cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+    if([checklist.items count] == 0){
+        cell.detailTextLabel.text = @"NO Items";
+    }
+    else if ([checklist countUncheckedItems]==0) {
+        cell.detailTextLabel.text = @"All Done";
+    }else{
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%d Remaining",[checklist countUncheckedItems]];
+    }
+    if([checklist.items count] == 0){
+        cell.detailTextLabel.text = @"NO Items";
+    }
 
   return cell;
 }
@@ -205,5 +154,8 @@
         NSLog(@"bad command Error");
     }
 }
-
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+}
 @end
