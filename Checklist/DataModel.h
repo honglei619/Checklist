@@ -10,9 +10,10 @@
 
 @interface DataModel : NSObject
 @property(nonatomic,strong)NSMutableArray *lists;
+//@property(nonatomic,strong)NSString *name;
 
 -(void)saveChecklists;
 -(NSInteger)indexOfSelectedChecklist;
 -(void)setIndexOfSelectChecklist:(NSInteger)index;
-
+-(void)sortChecklists;
 @end
