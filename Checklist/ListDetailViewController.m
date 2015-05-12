@@ -8,14 +8,25 @@
 
 #import "ListDetailViewController.h"
 #import "Checklist.h"
-@implementation ListDetailViewController
+@implementation ListDetailViewController{
+    NSString *_IconName;
+}
+-(id)initWithCoder:(NSCoder *)aDecoder{
+    if ((self =[super initWithCoder:aDecoder])) {
+        _IconName = @"Folder";
+    }
+    return  self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     if(self.checklistToEdit !=nil)
     {
         self.title = @"Edit Checklist"; self.textField.text = self.checklistToEdit.name; self.doneBarButton.enabled = YES;
+        _IconName = self.checklistToEdit.iconName;
     }
+    self.iconImageView.image = [UIImage imageNamed:_IconName];
 }
 
 
@@ -37,17 +48,23 @@
     {
         Checklist *checklist = [[Checklist alloc]init]; checklist.name = self.textField.text;
         [self.delegate listDetailViewController:self didFinishAddingChecklist:checklist];
+        checklist.iconName = _IconName;
     }
     else
     {
         self.checklistToEdit.name = self.textField.text;
         [self.delegate listDetailViewController:self didFinishEditingChecklist:self.checklistToEdit];
+        self.checklistToEdit.iconName = _IconName;
     }
 }
 
 -(NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return nil;
+    if (indexPath.section ==1) {
+        return indexPath;
+    }else{
+        return nil;
+    }
 }
 
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
@@ -58,14 +75,17 @@
     return YES;
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"PickIcon"]){
+        IconPickerViewController *controller = segue.destinationViewController;
+        controller.delegate = self;
+    }
+}
 
-
-
-
-
-
-
-
-
+-(void)iconPicker:(IconPickerViewController *)picker didPickIcon:(NSString *)iconName{
+    _IconName = iconName;
+    self.iconImageView.image = [UIImage imageNamed:_IconName];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
 
 @end

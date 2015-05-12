@@ -13,6 +13,7 @@
 		4B5C22E01AF92586000712C6 /* ChecklistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5C22DF1AF92586000712C6 /* ChecklistViewController.m */; };
 		4B5C22E91AF92C26000712C6 /* ListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5C22E81AF92C26000712C6 /* ListDetailViewController.m */; };
 		4B5D7D6C1AFE831000F05D48 /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5D7D6B1AFE831000F05D48 /* DataModel.m */; };
+		4B84B10A1B02400700D78CB6 /* IconPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B84B1091B02400700D78CB6 /* IconPickerViewController.m */; };
 		4BD8B7E71AD03E3C0097CAEC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD8B7E61AD03E3C0097CAEC /* main.m */; };
 		4BD8B7EA1AD03E3C0097CAEC /* ChecklistsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD8B7E91AD03E3C0097CAEC /* ChecklistsAppDelegate.m */; };
 		4BD8B7F01AD03E3C0097CAEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BD8B7EE1AD03E3C0097CAEC /* Main.storyboard */; };
@@ -45,6 +46,8 @@
 		4B5C22E81AF92C26000712C6 /* ListDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListDetailViewController.m; sourceTree = "<group>"; };
 		4B5D7D6A1AFE831000F05D48 /* DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
 		4B5D7D6B1AFE831000F05D48 /* DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
+		4B84B1081B02400700D78CB6 /* IconPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconPickerViewController.h; sourceTree = "<group>"; };
+		4B84B1091B02400700D78CB6 /* IconPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconPickerViewController.m; sourceTree = "<group>"; };
 		4BD8B7E11AD03E3C0097CAEC /* Checklist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Checklist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD8B7E51AD03E3C0097CAEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BD8B7E61AD03E3C0097CAEC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -106,6 +109,8 @@
 				4B2A83C01AFBC11E00FA8355 /* ChecklistItem.m */,
 				4B5C22DE1AF92586000712C6 /* ChecklistViewController.h */,
 				4B5C22DF1AF92586000712C6 /* ChecklistViewController.m */,
+				4B84B1081B02400700D78CB6 /* IconPickerViewController.h */,
+				4B84B1091B02400700D78CB6 /* IconPickerViewController.m */,
 				4B2A83B91AFBBA2D00FA8355 /* AllListsViewController.h */,
 				4B2A83BA1AFBBA2D00FA8355 /* AllListsViewController.m */,
 				4B5C22E71AF92C26000712C6 /* ListDetailViewController.h */,
@@ -250,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B2A83BE1AFBBAEC00FA8355 /* Checklist.m in Sources */,
+				4B84B10A1B02400700D78CB6 /* IconPickerViewController.m in Sources */,
 				4BD8B7EA1AD03E3C0097CAEC /* ChecklistsAppDelegate.m in Sources */,
 				4B5D7D6C1AFE831000F05D48 /* DataModel.m in Sources */,
 				4BD8B7E71AD03E3C0097CAEC /* main.m in Sources */,

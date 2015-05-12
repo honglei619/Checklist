@@ -71,6 +71,7 @@
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
     NSString *newText = [textField.text stringByReplacingCharactersInRange:range withString:string];
+/*
     if([newText length]>0 && newText!=nil && newText!=NULL && [[newText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length]!=0)   //判断输入的字符长度大于1，并且不能为空对象及空格
     {
         self.doneBarButton.enabled = YES;
@@ -78,7 +79,8 @@
     {
         self.doneBarButton.enabled = NO;
     }
-    //self.doneBarButton.enabled = ([newText length]>0);
+*/
+    self.doneBarButton.enabled =([newText length]>0);
     return YES;
 }
 
