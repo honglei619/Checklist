@@ -21,7 +21,7 @@
   [super viewDidLoad];
   self.title = self.checklist.name;
 
-    NSLog(@"checklist name is:%@",self.checklist.name);
+   // NSLog(@"checklist name is:%@",self.checklist.name);
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,7 +52,9 @@
 - (void)configureTextForCell:(UITableViewCell *)cell withChecklistItem:(ChecklistItem *)item
 {
   UILabel *label = (UILabel *)[cell viewWithTag:1000];
-  label.text = item.text;
+  //label.text = item.text;
+
+    label.text = [NSString stringWithFormat:@"%ld: %@",(long)item.itemId,item.text];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

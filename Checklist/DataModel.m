@@ -13,7 +13,8 @@
 
 -(void)registerDefault{
     
-    NSDictionary *dictionary =@{@"ChecklistIndex":@-1,@"FirstTime":@ YES};
+    
+    NSDictionary *dictionary =@{@"ChecklistIndex":@-1,@"FirstTime":@ YES,@"ChecklistItemId":@0};
     [[NSUserDefaults standardUserDefaults]registerDefaults:dictionary                   ];
     
 }
@@ -52,7 +53,7 @@
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths firstObject];
-     NSLog(@"file path is %@",documentsDirectory);
+     //NSLog(@"file path is %@",documentsDirectory);
     return documentsDirectory;
    
 }
@@ -91,7 +92,7 @@
         
         self.lists = [[NSMutableArray alloc]initWithCapacity:20];
     }
-    NSLog(@"file path is %@",path);
+    //NSLog(@"file path is %@",path);
     
 }
 
@@ -108,5 +109,10 @@
     [self.lists sortUsingSelector:@selector(compare:)];
 }
 
-
++(NSInteger)nextChecklistItemId{
+    NSUserDefaults *userDefaults =[NSUserDefaults standardUserDefaults]; NSInteger itemId = [userDefaults integerForKey:@"ChecklistItemId"];
+    [userDefaults setInteger:itemId +1 forKey:@"ChecklistItemId"];
+    [userDefaults synchronize];
+    return itemId;
+}
 @end

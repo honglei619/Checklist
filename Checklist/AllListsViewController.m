@@ -147,7 +147,7 @@
         Checklist *checklist = self.dataModel.lists[index];
         [self performSegueWithIdentifier:@"ShowChecklist" sender:checklist];
     }else{
-        NSLog(@"bad command Error");
+        //NSLog(@"bad command Error");
     }
 }
 -(void)viewWillAppear:(BOOL)animated{
