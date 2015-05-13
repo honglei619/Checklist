@@ -40,10 +40,13 @@
   UILabel *label = (UILabel *)[cell viewWithTag:1001];
 
   if (item.checked) {
-    label.text = @"✅";
+    label.text = @"√";
+      label.textColor =self.view.tintColor;
   } else {
-    label.text = @"🙅";
+    label.text = @"×";
+      label.textColor = [UIColor redColor];
   }
+    
 }
 
 - (void)configureTextForCell:(UITableViewCell *)cell withChecklistItem:(ChecklistItem *)item

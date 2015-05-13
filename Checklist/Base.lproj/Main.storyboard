@@ -321,4 +321,5 @@
     <inferredMetricsTieBreakers>
         <segue reference="GrM-Ix-qcb"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.40590205482136987" green="0.79806241436102787" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>
